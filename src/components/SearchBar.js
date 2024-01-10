@@ -5,14 +5,14 @@ const SearchBar = ({ onSearchHandler }) => {
   const [search, setSearch] = useState("");
 
   const onChangeHandler = (e) => {
-    setSearch(() => e.target.value);
+    setSearch(() => e.target.value.toLowerCase());
     if (e.target.value === 0) {
       onSearchHandler(undefined);
     }
   };
 
   const onButtonClickHandler = () => {
-    onSearchHandler(search);
+    onSearchHandler(search.toLowerCase());
     setSearch("");
   };
 
